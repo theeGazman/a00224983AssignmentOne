@@ -21,7 +21,7 @@ var sum;
 // We will use a remote console logging service for debug messages
 // Define the service variable and connnect
 // You must edit <<<change_to_your_repo_name>>> to be your repository name
-var consolere = require('console-remote-client').connect('console.re','80','957b-8e13-32bf');
+var consolere = require('console-remote-client').connect('console.re','80','assignment');
 
 // Function to handle web browser requests and server responses
 function handleRequest(request, response){
@@ -44,7 +44,9 @@ var server = http.createServer(handleRequest);
 // Lets start our server
 server.listen(server_port, server_ip_address, function(){
     // This is the callback function which triggered when server is successfully listening (active).
-    
+    console.re.log("HTTP Server listening on: " + server_ip_address + ":" + server_port);
+    console.re.log("My server ip address is: " + server_ip_address);
+    console.re.log("My server port is: " + server_port);
     // ASSIGNMENT
     // 3. Add a debug message which ouputs a message indicating the server is started (listening for user requests).
     // 4. Add a debug message which ouputs your server ip address and your server port number. Your server ip address 
