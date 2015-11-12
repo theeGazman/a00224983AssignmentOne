@@ -14,7 +14,7 @@ var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 // Set up some program variables (global) for our maths problem
-var augend = 76;
+var augend = 6;
 var addend = 3;
 var sum;
 
@@ -30,6 +30,9 @@ function handleRequest(request, response){
     console.re.log(sum = augend + addend);
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
+    console.re.log('Assignment One. Expected Sum of' + augend + "+" + addend + 'is 9, Actual Sum returned by program is : ' + sum);
+    console.re.log("My server ip address is: " + server_ip_address);
+    console.re.log("My server port is: " + server_port);
 
     
     // ASSIGNMENT
@@ -45,8 +48,7 @@ var server = http.createServer(handleRequest);
 server.listen(server_port, server_ip_address, function(){
     // This is the callback function which triggered when server is successfully listening (active).
     console.re.log("HTTP Server listening on: " + server_ip_address + ":" + server_port);
-    console.re.log("My server ip address is: " + server_ip_address);
-    console.re.log("My server port is: " + server_port);
+    
     // ASSIGNMENT
     // 3. Add a debug message which ouputs a message indicating the server is started (listening for user requests).
     // 4. Add a debug message which ouputs your server ip address and your server port number. Your server ip address 
